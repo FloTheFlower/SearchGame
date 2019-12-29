@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>  
+      div {position: absolute; width:500px; height:500px}
+      #rightSide {left: 500px; border-left: 1px solid black } 
+      img {position: absolute; height: 100} 
+</style>
+
+<script>
+var numberOfFaces = 5;
+function generateFaces() {
+
+
+var theLeftSide = document.getElementById("leftSide");
+   for (i=1; i<= numberOfFaces; i++) {
+   var myRandom1 = Math.floor(Math.random() * 400);
+   var myRandom2 = Math.floor(Math.random() * 400);
+   var image = document.createElement("img");
+   image.src = "face.png";
+   image.style.top = myRandom1 + "px";
+   image.style.left = myRandom2 + "px";
+   theLeftSide.appendChild(image); 
+
+};
+
+var theRightSide = document.getElementById("rightSide");
+var leftSideImages = theLeftSide.cloneNode(true);
+leftSideImages.removeChild(leftSideImages.lastChild);
+theRightSide.appendChild(leftSideImages);
+
+
+var theBody = document.getElementsByTagName("body") [0];
+
+theLeftSide.lastChild.onclick=function nextLevel(event){
+   event.stopPropagation();
+   numberOfFaces += 5;
+   delete_left();
+   delete_right();
+   generateFaces();  
+};
+
+theBody.onclick = function gameOver() {
+   alert("Game Over!");
+   theBody.onclick = null;
+   theLeftSide.lastChild.onclick = null;
+}; 
+
+function delete_left() {
+   while (theLeftSide.firstChild)
+   theLeftSide.removeChild(theLeftSide.firstChild);
+};
+
+function delete_right() {
+   while (theRightSide.firstChild) 
+   theRightSide.removeChild(theRightSide.firstChild);
+}
+};
+
+</script>
+</head>
+<body id = "thebody" onload="generateFaces()">
+   <hi> <strong> Matching Game </strong> </hi>
+   <p> Click on extra smiling face on the left. </p>
+   <div id="leftSide"></div>
+   <div id="rightSide"></div>
+   </div>
+</body>
+</html>
