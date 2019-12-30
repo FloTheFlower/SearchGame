@@ -3,10 +3,10 @@
 <head>
 <style>  
       div {position: absolute; width:500px; height:500px}
-      #rightSide {left: 500px; border-left: 1px solid black } 
+      #rightSide {left: 500px; border-left: 5px solid yellow } 
       img {position: absolute; height: 100} 
 </style>
-
+<link rel= "stylesheet" href="searchgame.css" />
 <script>
 var numberOfFaces = 5;
 function generateFaces() {
@@ -60,8 +60,10 @@ function delete_right() {
 </script>
 </head>
 <body id = "thebody" onload="generateFaces()">
-   <hi> <strong> Matching Game </strong> </hi>
-   <p> Click on extra smiling face on the left. </p>
+   
+   <h1 class="mario"> <strong> Matching Game </strong> </h1> <br><br><br>
+   <p class="mario2"> Click on extra smiling face on the left. If you click the wrong one, you lose. </p>
+
    <div id="leftSide"></div>
    <div id="rightSide"></div>
    </div>

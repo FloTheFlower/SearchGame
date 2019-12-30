@@ -1,0 +1,31 @@
+
+.mario{
+    
+    display: inline;
+    background-color: black;
+    font-family: fantasy;
+    font-weight: 300;
+    font-stretch: expanded;
+    color: yellow
+    
+}
+
+.mario2{
+    
+    display: inline;
+    background-color: black;
+    color: yellow;
+    font-family: fantasy;
+    font-weight: 300;
+    font-stretch: expanded;
+}
+
+#leftSide {
+    background-color: black;
+}
+
+#thebody {
+    background-image: url(https://images2.minutemediacdn.com/image/upload/c_fill,g_auto,h_1248,w_2220/v1555927376/shape/mentalfloss/smiley-face21_1.jpg?itok=Spgas8GB);
+    
+}
+
